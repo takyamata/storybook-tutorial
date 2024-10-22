@@ -48,4 +48,3 @@ Button.defaultProps = {
   size: 'medium',
   onClick: undefined,
 };
-
