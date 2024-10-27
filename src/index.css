@@ -292,6 +292,7 @@ textarea {
 .list-item input[type="text"] {
   background: transparent;
   width: 100%;
+  text-overflow: ellipsis;
 }
 
 .list-item input[type="text"]:focus {
