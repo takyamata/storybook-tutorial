@@ -4,9 +4,10 @@ export default function Task({
 		id,
 		title,
 		state
-	}
-})
-{
+	},
+	onPinTask,
+	onArchiveTask,
+}) {
 	return (
 		<div className={`list-item ${ state }`}>
 			<label htmlFor="checked" className="checkbox">
@@ -15,7 +16,11 @@ export default function Task({
 					name="checked"
 					id={`archiveTask-${ id }`}
 				/>
-				<span className="checkbox-custom"></span>
+				<span 
+					className="checkbox-custom"
+					onClick={() => onArchiveTask(id)}
+				>
+				</span>
 			</label>
 			<label htmlFor="title" className="title">
 				<input
@@ -31,6 +36,7 @@ export default function Task({
 					type="button"
 					className="pin-button"
 					id={`pinTask-${ id }`}
+					onClick={() => onPinTask(id)}
 				>
 					<span className="icon-star"></span>
 				</button>
@@ -46,5 +52,6 @@ Task.propTypes = {
 		id: PropType.string.isRequired,
 		title: PropType.string.isRequired,
 		state: PropType.string.isRequired
-	})
+	}),
+	onPinTask: PropType.func,
 };
